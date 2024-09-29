@@ -6,7 +6,7 @@ let menuToggle;
 let menuState = 0;
 let queryState = 1000;
 
-//Mobile Menu:
+//Mobile Menu Interactions:
 function mediaQuery(){
     let width = window.innerWidth
 
@@ -30,6 +30,8 @@ function menuActivation(){
         menuToggle = document.querySelector("#menuToggle"); 
         menuToggle.addEventListener("click", ()=>{
             menu.innerHTML = "<ul id='menu'><li><a href='#'>Place</a></li><li><a href='#'>Holder</a></li><li><a href='#'>Place</a></li><li><a href='#'>Holder</a></li></ul>";
+            menuTab = document.querySelector("#menu"); //Código a tratar
+            menuTab.setAttribute("left", "100px")
             menuState = 1;
             menuActivation();
         });

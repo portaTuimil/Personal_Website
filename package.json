@@ -1,4 +1,5 @@
 {
+  "homepage": "https://portatuimil.github.io/Personal_Website/",
   "name": "personal-website",
   "private": true,
   "version": "0.0.0",
@@ -6,8 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "deploy": "npm run build && gh-pages -d dist",
-    "preview": "vite preview"    
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d dist",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "gh-pages": "^6.1.1",

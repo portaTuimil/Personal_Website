@@ -112,7 +112,7 @@ li a{
                 background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                 opacity 0.55s ease;
 }
-      
+    
 #menuToggle span:first-child{
     transform-origin: 0% 0%;
 }
@@ -135,13 +135,13 @@ li a{
 #menuToggle input:checked ~ span:nth-last-child(2){
     transform: rotate(-45deg) translate(0, -1px);
 }
-      
+
 #menu{
     position: absolute;
     width: 180px;
     height: 120vh;
     box-shadow: 0 0 10px #85888C;
-    margin: -50px 0 0 400px;
+    margin: -50px 0 0 300px;
     padding: 25px;
     padding-top: 125px;
     background-color: #F5F6FA;
