@@ -1,7 +1,7 @@
 import './style.css'
 
 const nav = document.querySelector(".navbar");
-const menu = document.querySelector(".menu");
+const lateralMenu = document.querySelector("#lateralMenu");
 let menuToggle;
 let menuState = 0;
 let queryState = 1000;
@@ -12,12 +12,12 @@ function mediaQuery(){
 
     if (width <= 580 && queryState != 0){
         nav.innerHTML = "<h1>Pablo Porta</h1> <div id='menuToggle'> <input class='mediaButton' type='checkbox' /> <span></span> <span></span> <span></span> </div>";
+        menuState = 0
         menuActivation();
         queryState = 0;
 
     } else if (width >= 580 && queryState != 1){
         nav.innerHTML = "<h1>Pablo Porta</h1> <ul class='nav-links'> <li><a href='#'>Place</a></li> <li><a href='#''>Holder</a></li> <li><a href='#'>Place</a></li> <li><a href='#''>Holder</a></li>";
-        menu.innerHTML = " ";
         queryState = 1;
     }
 };
@@ -29,9 +29,7 @@ function menuActivation(){
     if (menuState == 0){
         menuToggle = document.querySelector("#menuToggle"); 
         menuToggle.addEventListener("click", ()=>{
-            menu.innerHTML = "<ul id='menu'><li><a href='#'>Place</a></li><li><a href='#'>Holder</a></li><li><a href='#'>Place</a></li><li><a href='#'>Holder</a></li></ul>";
-            menuTab = document.querySelector("#menu"); //Código a tratar
-            menuTab.setAttribute("left", "100px")
+            lateralMenu.style.width = "250px";
             menuState = 1;
             menuActivation();
         });
@@ -39,10 +37,15 @@ function menuActivation(){
     } else{
         menuToggle = document.querySelector("#menuToggle"); 
         menuToggle.addEventListener("click", ()=>{
-            menu.innerHTML = " ";
+            lateralMenu.style.width = "0";
             menuState = 0;
             menuActivation();
         });
         menuState = 0;
     }
 };
+
+document.querySelector(".closebtn").addEventListener("click", ()=>{
+    menuActivation();
+    document.getElementById("lateralMenu").style.width = "0";
+})

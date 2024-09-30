@@ -78,7 +78,7 @@ li a{
 
 
 
-/* ---------- Mobile Menu ---------- https://codepen.io/shieldsma91/pen/zLpbLX */ 
+/* ---------- Mobile Menu ---------- */ 
 #menuToggle {
     display: flex;
     flex-direction: column;
@@ -112,53 +112,37 @@ li a{
                 background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                 opacity 0.55s ease;
 }
-    
-#menuToggle span:first-child{
-    transform-origin: 0% 0%;
-}
-     
-#menuToggle span:nth-last-child(2){
-    transform-origin: 0% 100%;
-}
-      
-#menuToggle input:checked ~ span{
-    opacity: 1;
-    transform: rotate(45deg) translate(-3px, -1px);
-    background: #36383F;
-}
 
-#menuToggle input:checked ~ span:nth-last-child(3){
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
+#lateralMenu{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
 }
-      
-#menuToggle input:checked ~ span:nth-last-child(2){
-    transform: rotate(-45deg) translate(0, -1px);
-}
-
-#menu{
-    position: absolute;
-    width: 180px;
-    height: 120vh;
-    box-shadow: 0 0 10px #85888C;
-    margin: -50px 0 0 300px;
-    padding: 25px;
-    padding-top: 125px;
-    background-color: #F5F6FA;
-    -webkit-font-smoothing: antialiased;
-    transform-origin: 0% 0%;
-    transform: translate(100px, 0);
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-}
-      
-#menu li{
+  
+#lateralMenu a{
+    padding: 8px 8px 8px 32px;
     text-decoration: none;
-    padding: 10px 0;
-    transition-delay: 2s;
-    font-size: 1.6rem;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
 }
-      
-#menuToggle input:checked ~ ul{
-    transform: none;
+  
+#lateralMenu a:hover{
+    color: #f1f1f1;
 }
-
+  
+#lateralMenu .closebtn{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
