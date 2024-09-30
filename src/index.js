@@ -2,8 +2,9 @@ import './style.css'
 
 const nav = document.querySelector(".navbar");
 const lateralMenu = document.querySelector("#lateralMenu");
-let menuToggle;
-let menuState = 0;
+let openButton;
+let closeButton = document.querySelector(".closebtn");
+let menuState = false;
 let queryState = 1000;
 
 //Mobile Menu Interactions:
@@ -26,26 +27,18 @@ mediaQuery();
 window.addEventListener('resize', function() {mediaQuery()});
 
 function menuActivation(){
-    if (menuState == 0){
-        menuToggle = document.querySelector("#menuToggle"); 
-        menuToggle.addEventListener("click", ()=>{
-            lateralMenu.style.width = "250px";
-            menuState = 1;
+    if (!menuState){
+        openButton = document.querySelector("#menuToggle");
+        openButton.addEventListener("click", ()=>{
+            lateralMenu.style.width = "200px";
+            menuState = true;
             menuActivation();
         });
-        menuState = 1;
     } else{
-        menuToggle = document.querySelector("#menuToggle"); 
-        menuToggle.addEventListener("click", ()=>{
+        closeButton.addEventListener("click", ()=>{
             lateralMenu.style.width = "0";
-            menuState = 0;
+            menuState = false;
             menuActivation();
         });
-        menuState = 0;
     }
-};
-
-document.querySelector(".closebtn").addEventListener("click", ()=>{
-    menuActivation();
-    document.getElementById("lateralMenu").style.width = "0";
-})
+}
