@@ -6,6 +6,7 @@
 :root{
     --primary-color: #010101;
     --secondary-color: #ffffff;
+    --text-color: #818181;
     font-family: Roboto;
 }
 
@@ -58,7 +59,26 @@ li a{
 .first-slide{
     height: 100vh;
     width: 100%;
-    background-color: var(--primary-color);
+    /*background-color: var(--primary-color);*/
+    background-image: url(https://get.wallhere.com/photo/artwork-minimalism-mountains-eagle-forest-1902773.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.title{
+    height: 30vw;
+    width: 20vw;
+    /**background-color: white;*/
+}
+
+.logo{
+    height: 30vw;
+    width: 40vw;
+    /*background-color: white;*/
 }
 
 
@@ -126,7 +146,7 @@ li a{
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: var(--text-color);
     display: block;
     transition: 0.3s;
 }
@@ -142,3 +162,33 @@ li a{
     font-size: 36px;
     margin-left: 50px;
 }
+
+/* ---------- Scrollbar ---------- */ 
+
+body {
+    --sb-track-color: #232E33;
+    --sb-thumb-color: #1a1b1f;
+    --sb-size: 14px;
+  }
+  
+  body::-webkit-scrollbar {
+    width: var(--sb-size)
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 3px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 3px;
+    
+  }
+  
+  @supports not selector(::-webkit-scrollbar) {
+    body {
+      scrollbar-color: var(--sb-thumb-color)
+                       var(--sb-track-color);
+    }
+  }
