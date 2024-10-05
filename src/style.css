@@ -4,13 +4,15 @@
   }
 
 :root{
-    --primary-color: #0b131e;
+    --primary-color: #1a1b1f;
     --secondary-color: #ffffff;
-    --text-color: #818181;
-    --sb-track-color: #232E33;
-    --sb-thumb-color: #1a1b1f;
+    --terciary-color:#ffffff;
+    --text-color: #deddd0;
+    --text-secondary-color: #818181;
+    --sb-thumb-color: #232E33;
     --sb-size: 14px;
     font-family: Roboto;
+    background-color: var(--primary-color);
 }
 
 *{
@@ -22,25 +24,29 @@
 }
 
 
+
 /* ---------- Navbar ---------- */ 
 .navbar{
     height: 64px;
     width: calc(100% - 12px);
     margin: 6px 6px 0 6px;
     padding: 0 2vw;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
-    z-index: 10;
+    position: fixed;
+    top: 0;
 }
 
 .navbar > h1{
     font-size: 1.6rem;
+    color: var(--text-color);
 }
 
 li a{
-    color: var(--primary-color);
+    text-decoration: none;
+    color: var(--text-color);
 }
 
 .nav-links li{
@@ -53,8 +59,9 @@ li a{
 }
 
 .nav-links li a:hover{
-    color: var(--text-color);
+    color: var(--text-secondary-color);
 }
+
 
 
 /* ---------- First Slide ---------- */ 
@@ -64,52 +71,14 @@ li a{
     background-color: var(--primary-color);
 }
 
-.parallax-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.parallax-layer {
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-#first-layer{
-    background-image: url("assets/fonts/2.png");
-    z-index: 3;
-}
-
-#second-layer{
-    background-image: url("assets/fonts/1.png");
-    z-index: 2;
-}
-
-#third-layer{
-    background-image: url("assets/fonts/1.png");
-    z-index: 1;
-}
-
 
 
 /* ---------- Second Slide ---------- */ 
 .second-slide{
     height: 100vh;
     width: 100%;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
-
-
-
-
-
 
 
 
@@ -135,11 +104,12 @@ li a{
       
 #menuToggle span{
     display: flex;
-    width: 29px;
+    width: 36px;
     height: 2px;
     margin-bottom: 5px;
+    margin-top: 5px;
     position: relative;
-    background: var(--primary-color);
+    background: var(--text-color);
     border-radius: 3px;
     z-index: 1;
 }
@@ -161,7 +131,7 @@ li a{
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: var(--text-color);
+    color: var(--text-secondary-color);
     display: block;
     transition: 0.3s;
 }
@@ -172,11 +142,13 @@ li a{
   
 #lateralMenu .closebtn{
     position: absolute;
-    top: 0;
-    right: 25px;
+    top: 8px;
+    right: 13px;
     font-size: 36px;
     margin-left: 50px;
 }
+
+
 
 /* ---------- Scrollbar ---------- */ 
 
@@ -185,7 +157,7 @@ li a{
 }
   
 body::-webkit-scrollbar-track {
-    background: var(--sb-track-color);
+    background: var(--primary-color);
     border-radius: 3px;
 }
   
@@ -198,6 +170,6 @@ body::-webkit-scrollbar-thumb {
 @supports not selector(::-webkit-scrollbar) {
     body {
       scrollbar-color: var(--sb-thumb-color)
-                       var(--sb-track-color);
+                       var(--primary-color);
     }
 }
