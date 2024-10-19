@@ -4,7 +4,7 @@
   }
 
 :root{
-    --primary-color: #1a1b1f;
+    --primary-color: #0a121c;
     --secondary-color: #ffffff;
     --terciary-color:#ffffff;
     --text-color: #deddd0;
@@ -12,7 +12,7 @@
     --sb-thumb-color: #232E33;
     --sb-size: 14px;
     font-family: Roboto;
-    background-color: var(--primary-color);
+    color-scheme: dark;
 }
 
 *{
@@ -21,6 +21,8 @@
     box-sizing: border-box;
     list-style-type: none;
     text-decoration: none;
+    scrollbar-width: auto;
+    scrollbar-color: #232e33 #0a121c;
 }
 
 
@@ -30,23 +32,26 @@
     height: 64px;
     width: calc(100% - 12px);
     margin: 6px 6px 0 6px;
-    padding: 0 2vw;
+    padding: 0 6vw;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0;
+    z-index: 2;
 }
 
 .navbar > h1{
     font-size: 1.6rem;
     color: var(--text-color);
+    text-shadow: 1px 1px 2px var(--primary-color);
 }
 
 li a{
     text-decoration: none;
     color: var(--text-color);
+    text-shadow: 1px 1px 2px var(--primary-color);
 }
 
 .nav-links li{
@@ -59,25 +64,7 @@ li a{
 }
 
 .nav-links li a:hover{
-    color: var(--text-secondary-color);
-}
-
-
-
-/* ---------- First Slide ---------- */ 
-.first-slide{
-    height: 100vh;
-    width: 100%;
-    background-color: var(--primary-color);
-}
-
-
-
-/* ---------- Second Slide ---------- */ 
-.second-slide{
-    height: 100vh;
-    width: 100%;
-    background-color: var(--secondary-color);
+    color: var(--secondary-color);
 }
 
 
@@ -151,25 +138,158 @@ li a{
 
 
 /* ---------- Scrollbar ---------- */ 
+*::-webkit-scrollbar {
+    width: 14px;
+}
 
- body::-webkit-scrollbar {
-    width: var(--sb-size)
-}
-  
-body::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: var(--primary-color);
-    border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--sb-thumb-color);
+    border-radius: 14px;
+    border: 0px none var(--primary-color);
+}
+
+
+
+/* ---------- Arrow Animation ---------- */ 
+.arrows {
+	width: 60px;
+	height: 72px;
+	position: absolute;
+	left: 50%;
+	margin-left: -30px;
+	bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.arrows path {
+	stroke: var(--text-color);
+	fill: transparent;
+	stroke-width: 2px;	
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+	animation-delay:-1s;
+	-webkit-animation-delay:-1s; /* Safari & Chrome */
+}
+
+.arrows path.a2 {
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s; /* Safari & Chrome */
+}
+
+.arrows path.a3 {	
+	animation-delay:0s;
+	-webkit-animation-delay:0s; /* Safari & Chrome */
+}
+
+
+
+/* ---------- Parallax ---------- */ 
+.wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
 }
   
-body::-webkit-scrollbar-thumb {
-    background: var(--sb-thumb-color);
-    border-radius: 3px;
-    
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transform-style: preserve-3d;
+    z-index: -1;
 }
   
-@supports not selector(::-webkit-scrollbar) {
-    body {
-      scrollbar-color: var(--sb-thumb-color)
-                       var(--primary-color);
+.background {
+    transform: translateZ(-18px) scale(2.85);
+    background-image: url("assets/imgs/Last_Layer.png");
+}
+  
+.rightground {
+    transform: translateZ(-14px) scale(2.45);
+    background-image: url("assets/imgs/Right_Medium.png");
+}
+  
+.leftground {
+    transform: translateZ(-10px) scale(2.05);
+    background-image: url("assets/imgs/Left_Medium.png");
+}
+  
+.foreground{
+    transform: translateZ(0) scale(1);
+    background-image: url("assets/imgs/First_Layer.png");
+}
+  
+.background,
+.rightground,
+.leftground,
+.foreground {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: bottom;
+    z-index: -1;
+}
+  
+.title-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+  
+    margin-top: -610px;
+    transform: translateZ(-15px) scale(2.55);
+}
+  
+.title {
+    position: absolute;
+    margin: auto;
+    font-size: 5rem;
+    color: var(--terciary-color);
+    text-shadow: 0 0 5px black;;
+}
+  
+main {
+    font-size: 2rem;
+    padding: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: -1px;
+    height: 200vh;
+}
+
+@media (max-width: 700px) {
+    .title{
+      font-size: 3.5rem;
+   }
+  
+    .title-container{
+      margin-top: -300px;
     }
 }
