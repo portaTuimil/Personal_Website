@@ -1,4 +1,5 @@
-import './style.css'
+import './styles/style.css'
+import './styles/animations.css'
 
 const nav = document.querySelector(".navbar");
 const lateralMenu = document.querySelector("#lateralMenu");

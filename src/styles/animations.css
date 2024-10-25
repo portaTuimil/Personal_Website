@@ -1,0 +1,111 @@
+/* ---------- Scrollbar ---------- */ 
+*::-webkit-scrollbar {
+    width: 14px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--primary-color);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--sb-thumb-color);
+    border-radius: 14px;
+    border: 0px none var(--primary-color);
+}
+
+
+
+/* ---------- Arrow Animation ---------- */ 
+.arrows {
+	width: 60px;
+	height: 72px;
+	position: absolute;
+	left: 50%;
+	margin-left: -30px;
+	bottom: 20px;
+    transform: translateZ(-2px) scale(1.2);
+    margin-bottom: -60px;
+}
+
+.arrows path {
+	stroke: var(--text-color);
+	fill: transparent;
+	stroke-width: 2.4px;	
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+	animation-delay:-1s;
+	-webkit-animation-delay:-1s; /* Safari & Chrome */
+}
+
+.arrows path.a2 {
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s; /* Safari & Chrome */
+}
+
+.arrows path.a3 {	
+	animation-delay:0s;
+	-webkit-animation-delay:0s; /* Safari & Chrome */
+}
+
+
+
+/* ---------- Media ---------- */ 
+@media (max-width: 700px) {
+    .title{
+      font-size: 3.5rem;
+    }
+  
+    .title-container{
+      margin-top: -300px;
+    }
+
+    p{
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    h2{
+        font-size: 2rem;
+    }
+
+    .introduction-wrapper{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .introduction-text{
+        width: 90vw;
+    }
+
+    .introduction-image{
+        width: 90vw;
+    }
+}
+
+@media (max-width: 1000px) {
+    .introduction{
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+}
