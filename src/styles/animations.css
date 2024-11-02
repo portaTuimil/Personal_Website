@@ -77,11 +77,6 @@
     .title-container{
       margin-top: -300px;
     }
-
-    p{
-        font-size: 1rem;
-        text-align: center;
-    }
     
     h2{
         font-size: 2rem;
@@ -95,6 +90,8 @@
 
     .introduction-text{
         width: 90vw;
+        font-size: 1.2rem;
+        text-align: center;
     }
 
     .introduction-image{
@@ -107,5 +104,6 @@
         flex-direction: column;
         align-items: center;
         gap: 30px;
+        padding-top: 20vh;
     }
 }
