@@ -1,6 +1,27 @@
 import './styles/style.css'
 import './styles/animations.css'
 
+
+//Loading screen, credits to https://codepen.io/abaicus/pen/ypXypE:
+function startLoader() {
+    const loader = document.querySelector(".loader");
+    const loadDiv = document.querySelector(".load-div");
+  
+    (function() {
+      loader.style.right = "0";
+    })();
+  
+    window.addEventListener("DOMContentLoaded", function(event) {
+      setTimeout(function() {
+        loader.style.left = "100%";
+        document.body.classList.remove("loading");
+        loadDiv.style.display= "block";
+      }, 200);
+    });
+  }
+startLoader();
+  
+
 const nav = document.querySelector(".navbar");
 const lateralMenu = document.querySelector("#lateralMenu");
 let openButton;
