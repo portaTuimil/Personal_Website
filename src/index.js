@@ -3,23 +3,17 @@ import './styles/animations.css'
 
 
 //Loading screen, credits to https://codepen.io/abaicus/pen/ypXypE:
-function startLoader() {
+(function (){
     const loader = document.querySelector(".loader");
     const loadDiv = document.querySelector(".load-div");
   
-    (function() {
-      loader.style.right = "0";
-    })();
-  
-    window.addEventListener("DOMContentLoaded", function(event) {
-      setTimeout(function() {
-        loader.style.left = "100%";
-        document.body.classList.remove("loading");
-        loadDiv.style.display= "block";
-      }, 200);
+    window.addEventListener("load", function(event) {
+        loadDiv.style.display = "block";
+        loader.style.display = "none";
+        
     });
-  }
-startLoader();
+})();
+
   
 
 const nav = document.querySelector(".navbar");
