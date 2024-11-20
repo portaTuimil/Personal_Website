@@ -92,6 +92,7 @@
         width: 90vw;
         font-size: 1.2rem;
         text-align: center;
+        margin-left: 0;
     }
 
     .introduction-image{
@@ -105,5 +106,6 @@
         align-items: center;
         gap: 30px;
         padding-top: 20vh;
+        padding-left: 0;
     }
 }
