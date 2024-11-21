@@ -217,6 +217,7 @@ main {
 
 .introduction{
     padding-top: 300px;
+    padding-bottom: 200px;
     padding-left: 300px;
     display: flex;
     gap: 20px
@@ -246,7 +247,7 @@ h2{
 
 .media-icons > a> svg{
     margin-left: 20px;
-    margin-top: 4px;
+    margin-top: 8px;
     color: white;
     width: 30px;
     height: 30px;

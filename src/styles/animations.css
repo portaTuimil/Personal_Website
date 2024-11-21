@@ -98,6 +98,10 @@
     .introduction-image{
         width: 90vw;
     }
+
+    .media-icons{
+        margin-left: -20px;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -108,4 +112,18 @@
         padding-top: 20vh;
         padding-left: 0;
     }
+}
+
+/* ---------- Scroll Animations ---------- */ 
+.animation{
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(5px);
+    transform: translate(-100px, 200px);
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0,0);
 }

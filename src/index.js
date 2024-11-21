@@ -58,3 +58,17 @@ function menuActivation(){
     }
 }
 
+//Animations:
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        if (entry.isIntersecting){
+            setTimeout(function(){
+                entry.target.classList.add("show");
+            }, 400);
+        }
+    });
+});
+
+const animationObjects = document.querySelectorAll(".animation");
+console.log(document.querySelectorAll(".animation"))
+animationObjects.forEach((el)=>{observer.observe(el)});
