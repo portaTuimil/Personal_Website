@@ -33,13 +33,13 @@ function mediaQuery(){
         queryState = 0;
 
     } else if (width >= 580 && queryState != 1){
-        nav.innerHTML = "<h1>Pablo Porta</h1> <ul class='nav-links'> <li><a href='#'>Home</a></li> <li><a href='#''>Blog</a></li> <li><a href='#'>Contact</a></li> <li><a href='#''>About</a></li>";
+        nav.innerHTML = "<h1>Pablo Porta</h1> <ul class='nav-links'> <li><a href='#' id='home'>Home</a></li> <li><a href='#''>Blog</a></li> <li><a href='#'>Contact</a></li> <li><a href='#''>About</a></li>";
         queryState = 1;
     }
 };
 
 mediaQuery();
-window.addEventListener('resize', function() {mediaQuery()});
+window.addEventListener('resize', function() {mediaQuery(), scrollButtons();});
 
 function menuActivation(){
     if (!menuState){
@@ -75,3 +75,9 @@ const observer = new IntersectionObserver((entries)=>{
 
 const animationObjects = document.querySelectorAll(".animation");
 animationObjects.forEach((el)=>{observer.observe(el)});
+
+//Nav Buttons Functionality:
+function scrollButtons(){
+    document.querySelector("#home").addEventListener("click", ()=> {console.log(document.querySelector("#home")); document.querySelector("main").scrollIntoView({behavior: 'smooth'})});
+};
+scrollButtons();
