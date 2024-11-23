@@ -211,8 +211,11 @@ main {
 }
 
 .presentation{
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .introduction{
@@ -220,11 +223,15 @@ main {
     padding-bottom: 200px;
     padding-left: 300px;
     display: flex;
-    gap: 20px
+    gap: 20px;
 }
 
 .introduction-wrapper{
     margin-top: 30px;
+    opacity: 0;
+    transition: all 0.8s;
+    filter: blur(5px);
+    transform: translate(-50px, 100px);
 }
 
 .introduction-text{
@@ -257,3 +264,23 @@ h2{
     height: 100px;
     width: 100px;
 }
+
+.divider{
+    background: rgb(10,18,28);
+    background: linear-gradient(90deg, rgba(10,18,28,1) 0%, rgba(71,87,111,1) 50%, rgba(10,18,28,1) 100%);
+    filter: blur(0.4px);
+    height: 2px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transition: all 0.8s;
+}
+
+.info{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+

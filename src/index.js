@@ -61,14 +61,17 @@ function menuActivation(){
 //Animations:
 const observer = new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
-        if (entry.isIntersecting){
+        if (entry.isIntersecting && entry.target.classList[0] == "introduction-wrapper"){
             setTimeout(function(){
-                entry.target.classList.add("show");
-            }, 400);
+                entry.target.classList.add("show1");
+            }, 150);
+        } else if (entry.isIntersecting && entry.target.classList[0] == "divider"){
+            setTimeout(function(){
+                entry.target.classList.add("show2");
+            }, 150);
         }
     });
 });
 
 const animationObjects = document.querySelectorAll(".animation");
-console.log(document.querySelectorAll(".animation"))
 animationObjects.forEach((el)=>{observer.observe(el)});

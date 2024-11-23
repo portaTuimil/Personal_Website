@@ -115,15 +115,13 @@
 }
 
 /* ---------- Scroll Animations ---------- */ 
-.animation{
-    opacity: 0;
-    transition: all 1s;
-    filter: blur(5px);
-    transform: translate(-100px, 200px);
-}
 
-.show{
+.show1{
     opacity: 1;
     filter: blur(0);
     transform: translate(0,0);
+}
+
+.show2{
+    opacity: 1;
 }
