@@ -33,7 +33,7 @@ function mediaQuery(){
         queryState = 0;
 
     } else if (width >= 580 && queryState != 1){
-        nav.innerHTML = "<h1>Pablo Porta</h1> <ul class='nav-links'> <li><a href='#' id='home'>Home</a></li> <li><a href='#''>Blog</a></li> <li><a href='#'>Contact</a></li> <li><a href='#''>About</a></li>";
+        nav.innerHTML = "<h1>Pablo Porta</h1> <ul class='nav-links'> <li><a href='#' id='home'>Home</a></li> <li><a href='#' id='about'>About</a></li> <li><a href='#'>Blog</a></li> <li><a href='https://github.com/portaTuimil'  target='_blank'>Contact</a></li>";
         queryState = 1;
     }
 };
@@ -69,6 +69,10 @@ const observer = new IntersectionObserver((entries)=>{
             setTimeout(function(){
                 entry.target.classList.add("show2");
             }, 150);
+        } else if (entry.isIntersecting && entry.target.classList[0] == "aboutme"){
+            setTimeout(function(){
+                entry.target.classList.add("show3");
+            }, 150);
         }
     });
 });
@@ -79,5 +83,6 @@ animationObjects.forEach((el)=>{observer.observe(el)});
 //Nav Buttons Functionality:
 function scrollButtons(){
     document.querySelector("#home").addEventListener("click", ()=> {console.log(document.querySelector("#home")); document.querySelector("main").scrollIntoView({behavior: 'smooth'})});
+    document.querySelector("#about").addEventListener("click", ()=> {console.log(document.querySelector("#about")); document.querySelector(".divider").scrollIntoView({behavior: 'smooth'})});
 };
 scrollButtons();

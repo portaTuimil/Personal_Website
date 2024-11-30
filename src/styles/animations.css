@@ -102,6 +102,17 @@
     .media-icons{
         margin-left: -20px;
     }
+
+    
+    .info{
+        padding-left: 5%;
+        padding-right: 5%;
+        font-size: 1rem;
+    }
+
+    h3{
+        text-align: center;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -124,4 +135,10 @@
 
 .show2{
     opacity: 1;
+}
+
+.show3{
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0,0);
 }
