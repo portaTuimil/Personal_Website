@@ -4,7 +4,13 @@
   }
 
 :root{
-    --primary-color: #0a121c;
+    --light-grey: #1e1e1e;
+    --dark-grey: #121212;
+    --link-blue:#6f87bf;
+    --dark-blue: #0b131e;
+    --light-beige: #deddd0;
+    --dark-beige: #818181;
+    --darker-beige: #282725;
     --secondary-color: #ffffff;
     --terciary-color:#ffffff;
     --text-color: #deddd0;
@@ -43,14 +49,14 @@
 .navbar > h1{
     font-size: 1.6rem;
     color: var(--text-color);
-    text-shadow: 1px 1px 2px var(--primary-color);
+    text-shadow: 1px 1px 2px var(--dark-blue);
     user-select: none;
 }
 
 li a{
     text-decoration: none;
     color: var(--text-color);
-    text-shadow: 1px 1px 2px var(--primary-color);
+    text-shadow: 1px 1px 2px var(--dark-blue);
 }
 
 .nav-links li{
@@ -170,6 +176,8 @@ header {
 .foreground{
     transform: translateZ(0) scale(1);
     background-image: url("../assets/imgs/First_Layer.png");
+    filter:  grayscale(70%) ;
+
 }
   
 .background,
@@ -207,7 +215,7 @@ header {
 
 /* ---------- Main Page ---------- */ 
 main {
-    background-color: var(--primary-color);
+    background-color: var(--dark-blue);
     color: var(--text-color);
     margin-top: -1px;
 }
@@ -218,6 +226,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background: linear-gradient(172deg, rgba(17,18,22,1) 21%, var(--dark-grey) 77%);
 }
 
 .introduction{
@@ -287,6 +296,7 @@ h2{
     justify-content: space-between;
     padding-left: 20%;
     padding-right: 20%;
+    background-color: #121212;
 }
 
 .aboutme{
