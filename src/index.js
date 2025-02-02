@@ -10,10 +10,9 @@ import './styles/animations.css'
     window.addEventListener("load", function(event) {
         loadDiv.style.display = "block";
         loader.style.display = "none";
-        
+        document.querySelector(".scroll").scrollIntoView();
     });
 })();
-
   
 //Mobile Menu Interactions:
 const nav = document.querySelector(".navbar");
@@ -82,7 +81,7 @@ animationObjects.forEach((el)=>{observer.observe(el)});
 
 //Nav Buttons Functionality:
 function scrollButtons(){
-    document.querySelector("#home").addEventListener("click", ()=> {console.log(document.querySelector("#home")); document.querySelector("main").scrollIntoView({behavior: 'smooth'})});
+    document.querySelector("#home").addEventListener("click", ()=> {console.log(document.querySelector("#home")); document.querySelector("header").scrollIntoView({behavior: 'smooth'})});
     document.querySelector("#about").addEventListener("click", ()=> {console.log(document.querySelector("#about")); document.querySelector(".divider").scrollIntoView({behavior: 'smooth'})});
 };
 scrollButtons();
