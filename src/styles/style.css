@@ -296,7 +296,7 @@ h2{
     flex-direction: column;
     justify-content: space-between;
     padding-left: 200px;
-    padding-right: 200px;
+    padding-right: 100px;
     opacity: 0;
     transition: all 2s;
 }
@@ -311,7 +311,7 @@ h2{
 
 .aboutText{
     font-size: 1.4rem;
-    width: 100%;
+    width: 80%;
     font-family: Robotom;
     opacity: 50%;
     border-left: 2px solid white;
