@@ -295,7 +295,7 @@ h2{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-left: 200px;
+    padding-left: 150px;
     padding-right: 100px;
     opacity: 0;
     transition: all 2s;
