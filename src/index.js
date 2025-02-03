@@ -10,7 +10,7 @@ import './styles/animations.css'
     window.addEventListener("load", function(event) {
         loadDiv.style.display = "block";
         loader.style.display = "none";
-        document.querySelector(".scroll").scrollIntoView();
+        //document.querySelector(".introduction").scrollIntoView();
     });
 })();
   
@@ -60,7 +60,7 @@ function menuActivation(){
 //Animations:
 const observer = new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
-        if (entry.isIntersecting && entry.target.classList[0] == "introduction-wrapper"){
+        if (entry.isIntersecting && entry.target.classList[0] == "introduction"){
             setTimeout(function(){
                 entry.target.classList.add("show1");
             }, 150);
@@ -72,7 +72,10 @@ const observer = new IntersectionObserver((entries)=>{
             setTimeout(function(){
                 entry.target.classList.add("show3");
             }, 150);
-        }
+        } else if (entry.isIntersecting && entry.target.classList[0] == "aboutText"){
+            setTimeout(function(){
+                document.querySelector(".info").classList.add("show2");
+            }, 250);}
     });
 });
 
@@ -82,6 +85,6 @@ animationObjects.forEach((el)=>{observer.observe(el)});
 //Nav Buttons Functionality:
 function scrollButtons(){
     document.querySelector("#home").addEventListener("click", ()=> {console.log(document.querySelector("#home")); document.querySelector("header").scrollIntoView({behavior: 'smooth'})});
-    document.querySelector("#about").addEventListener("click", ()=> {console.log(document.querySelector("#about")); document.querySelector(".divider").scrollIntoView({behavior: 'smooth'})});
+    document.querySelector("#about").addEventListener("click", ()=> {console.log(document.querySelector("#about")); document.querySelector(".aboutme").scrollIntoView({behavior: 'smooth'})});
 };
 scrollButtons();

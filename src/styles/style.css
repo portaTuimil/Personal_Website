@@ -28,7 +28,7 @@
     list-style-type: none;
     text-decoration: none;
     scrollbar-width: auto;
-    scrollbar-color: #232e33 #0a121c;
+    scrollbar-color: var(--light-grey) var(--dark-grey);
 }
 
 /* ---------- Navbar ---------- */ 
@@ -141,6 +141,8 @@ li a{
     margin-left: 50px;
 }
 
+
+
 /* ---------- Parallax ---------- */ 
 .wrapper {
     height: 100vh;
@@ -178,7 +180,6 @@ header {
     transform: translateZ(0) scale(1);
     background-image: url("../assets/imgs/First_Layer.png");
     filter:  grayscale(70%) ;
-
 }
   
 .background,
@@ -216,7 +217,6 @@ header {
 
 /* ---------- Main Page ---------- */ 
 main {
-    background-color: var(--dark-blue);
     color: var(--text-color);
     margin-top: -1px;
 }
@@ -226,20 +226,15 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    padding-top: 10px;
     background: linear-gradient(172deg, rgba(17,18,22,1) 21%, var(--dark-grey) 77%);
+    z-index: 0;
 }
 
 .introduction{
-    padding-top: 50px;
-    padding-bottom: 200px;
-    padding-left: 300px;
-    display: flex;
-    gap: 20px;
-}
-
-.introduction-wrapper{
-    margin-top: 30px;
+    padding-top: 180px;
+    padding-left: 200px;
+    gap: 80px;
     opacity: 0;
     transition: all 0.8s;
     filter: blur(5px);
@@ -250,11 +245,6 @@ main {
     font-size: 1.4rem;
     margin-left: 20px;
     opacity: 50%;
-}
-
-h2{
-    display: inline;
-    font-size: 3rem;
 }
 
 .media-icons{
@@ -272,11 +262,6 @@ h2{
     height: 30px;
 }
 
-.introduction-image{
-    height: 100px;
-    width: 100px;
-}
-
 .divider{
     background: rgb(10,18,28);
     background: linear-gradient(90deg, rgba(10,18,28,1) 0%, rgba(71,87,111,1) 50%, rgba(10,18,28,1) 100%);
@@ -287,35 +272,42 @@ h2{
     margin-right: auto;
     opacity: 0;
     transition: all 0.8s;
+    margin-bottom: -6px;
 }
 
+h2{
+    display: inline;
+    font-size: 3rem;
+}
+
+
+
+/* ---------- Info ---------- */ 
 .info{
+    margin-top: -30vh;
     min-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-left: 20%;
+    padding-left: 240px;
     padding-right: 20%;
-    background-color: #121212;
+    opacity: 0;
+    transition: all 2s;
 }
 
 .aboutme{
-    margin-top: 30px;
-    opacity: 0;
-    transition: all 0.8s;
-    filter: blur(5px);
-    transform: translate(0, 100px);
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+}
+
+.aboutText{
+    font-size: 1.4rem;
     width: 100%;
 }
 
-.description{
-    margin-top: 40px;
+#iframe{
     width: 100%;
-    font-size: 1.2rem;
-    line-height: 1.8rem;
-}
-
-h3{
-    font-size: 2.2rem;
 }
