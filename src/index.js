@@ -88,3 +88,22 @@ function scrollButtons(){
     document.querySelector("#about").addEventListener("click", ()=> {console.log(document.querySelector("#about")); document.querySelector(".aboutme").scrollIntoView({behavior: 'smooth'})});
 };
 scrollButtons();
+
+function iframeFunc(){
+    function checkIframeLoaded(context){
+        let iframe = document.getElementById(`iframe`); 
+
+        if (!(typeof context.getElementsByClassName(`lastPost`)[0] === "undefined")) {
+            let anchor = context.getElementsByClassName(`lastPost`)[0]; 
+            context.documentElement.scrollTop = anchor.offsetTop - 10;
+            iframe.style.height = `${anchor.offsetHeight + 20}px`;
+            iframe.style.height = `${anchor.offsetHeight + 20}px`; 
+            context.addEventListener(`click`, (e)=>{
+                e.preventDefault()
+                console.log("test")
+            }); return;
+        } else{
+            window.setTimeout(function() {checkIframeLoaded(context);}, 100)}};
+    checkIframeLoaded(this.contentWindow.document); 
+    setTimeout(checkIframeLoaded(this.contentWindow.document), 400)    
+}
