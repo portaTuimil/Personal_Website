@@ -88,6 +88,3 @@ function scrollButtons(){
     document.querySelector("#about").addEventListener("click", ()=> {console.log(document.querySelector("#about")); document.querySelector(".aboutme").scrollIntoView({behavior: 'smooth'})});
 };
 scrollButtons();
-
-var iframe = document.getElementById('bandcamp_iframe_left');
-iframe.src = 'https://bandcamp.com/EmbeddedPlayer.html/ref=https%253A%252F%252Fcivilaudio.com%252F/album=2271044833/size=large/bgcol=ffffff/linkcol=333333/transparent=true/?ignore='+Math.floor(Math.random() * 1000);
