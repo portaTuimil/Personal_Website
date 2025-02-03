@@ -53,7 +53,27 @@
         <div class="info">
           <div class="aboutme">
             <p class="aboutText animation">Welcome to my webpage, I'm Pablo, an electronical and mecanical engineering student. I like to code in my free time and I host a small blog where I post about my personal projects.<br> This is my most recent post, feel free to check it --&gt;</p>
-            <iframe id='iframe' src='https://portatuimil.github.io/Technical_Blog/' onload='setTimeout(iframeFunc(), 600)' frameborder='0' scrolling="no"></iframe>
+            <script>
+            function iframeFunc(){
+              function checkIframeLoaded(context){
+                  let iframe = document.getElementById(`iframe`); 
+
+                  if (!(typeof context.getElementsByClassName(`lastPost`)[0] === "undefined")) {
+                      let anchor = context.getElementsByClassName(`lastPost`)[0]; 
+                      context.documentElement.scrollTop = anchor.offsetTop - 10;
+                      iframe.style.height = `${anchor.offsetHeight + 20}px`;
+                      iframe.style.height = `${anchor.offsetHeight + 20}px`; 
+                      context.addEventListener(`click`, (e)=>{
+                          e.preventDefault()
+                          console.log("test")
+                      }); return;
+                  } else{
+                      window.setTimeout(function() {checkIframeLoaded(context);}, 100)}};
+              checkIframeLoaded(this.contentWindow.document); 
+              setTimeout(checkIframeLoaded(this.contentWindow.document), 400)    
+            }
+            </script>
+            <iframe id='iframe' src='https://portatuimil.github.io/Technical_Blog/' onload='iframeFunc()' frameborder='0' scrolling="no"></iframe>
           </div>
         </div>
       </main>
