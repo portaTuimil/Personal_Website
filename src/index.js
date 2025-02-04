@@ -60,19 +60,19 @@ function menuActivation(){
 //Animations:
 const observer = new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
-        if (entry.isIntersecting && entry.target.classList[0] == "introduction"){
+        if (entry.isIntersecting && entry.target.classList[0] == "scroll1"){
             setTimeout(function(){
-                entry.target.classList.add("show1");
-            }, 150);
-        } else if (entry.isIntersecting && entry.target.classList[0] == "divider"){
+                document.querySelector(".introduction").classList.add("show1");
+            }, 20);
+        }/* else if (entry.isIntersecting && entry.target.classList[0] == "divider"){
             setTimeout(function(){
                 entry.target.classList.add("show2");
             }, 150);
-        } else if (entry.isIntersecting && entry.target.classList[0] == "aboutme"){
+        } *//*else if (entry.isIntersecting && entry.target.classList[0] == "aboutme"){
             setTimeout(function(){
                 entry.target.classList.add("show3");
             }, 150);
-        } else if (entry.isIntersecting && entry.target.classList[0] == "aboutText"){
+        }*/ else if (entry.isIntersecting && entry.target.classList[0] == "scroll2"){
             setTimeout(function(){
                 document.querySelector(".info").classList.add("show2");
             }, 250);}
