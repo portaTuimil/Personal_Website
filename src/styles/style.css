@@ -317,11 +317,12 @@ h2{
     padding-left: 10px;
 }
 
-#iframe{
+.music{
+    height: 25vh;
     width: 100%;
+    border-radius: 20px;
+    background-color: var(--light-grey);
 }
-
-
 
 /* ---------- Blog ---------- */ 
 .item{
