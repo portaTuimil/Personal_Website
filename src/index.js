@@ -62,3 +62,23 @@ themeTooglers.forEach((element)=>{element.addEventListener("click", ()=>{
     body.classList.add(theme);
     localStorage.setItem("blogTheme", theme);
 })});
+
+
+const observer = new IntersectionObserver((entries, observerInstance) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // 1. Add the visible class
+      entry.target.classList.add('has-appeared');
+      
+      // 2. Unobserve immediately so scrolling up never triggers it again
+      observerInstance.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.15 // Triggers when 15% of the element is visible
+});
+
+// Attach to all elements with the class
+document.querySelectorAll('.fade-in-once').forEach(el => observer.observe(el));
+
+document.querySelector("body").style.opacity = "1";
